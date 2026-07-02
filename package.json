@@ -1,0 +1,42 @@
+{
+  "name": "travel-service",
+  "version": "1.0.0",
+  "description": "智能旅游助手服务端，基于nodejs + express + LangChain 创建的项目",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development tsx watch --clear-screen=false --include app/** --ignore src/model/table/** --import tsconfig-paths/register app/index.ts",
+    "test": "cross-env NODE_ENV=test tsx --import tsconfig-paths/register app/index.ts",
+    "build": "tsc",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "lint": "eslint app/**/*.ts",
+    "lint:fix": "eslint app/**/*.ts --fix",
+    "format": "prettier --write app/**/*.{ts,js,json}",
+    "format:check": "prettier --check app/**/*.{ts,js,json}"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.1",
+    "@langchain/openai": "^1.5.3",
+    "cookie-session": "^2.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.62.0",
+    "@typescript-eslint/parser": "^8.62.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.5.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "prettier": "^3.8.4",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
